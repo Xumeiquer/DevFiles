@@ -1,0 +1,14 @@
+#!/bin/bash
+
+__virtualenv_ps1()
+{
+	local exit=$?
+
+	if [ "$VIRTUAL_ENV" != "" ]; then
+        printf "[pyenv %s ]" "$(basename $VIRTUAL_ENV)"
+    else
+    	printf ""
+    fi
+
+    return $exit
+}

@@ -1,3 +1,13 @@
 #!/bin/bash
 
-export PATH=:/opt/bin:$PATH
+# Binarios del usuario
+export PATH=/opt/bin:$PATH
+
+# GO Path
+export GOPATH=$HOME/Workspace/go/bin
+
+# Python - Cajas de arena
+export WORKON_HOME=~/.virtualenvs
+
+# Python - Proyectos
+export PROJECT_HOME=$HOME/Workspace/python

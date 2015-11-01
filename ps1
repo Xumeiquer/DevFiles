@@ -7,8 +7,13 @@ prompt_command () {
         ERRPROMPT='->($?) '
     fi
     if [ "\$(type -t __git_ps1)" ]; then # if we're in a Git repo, show current branch
-        BRANCH="\$(__git_ps1 '[ %s ] ')"
+        BRANCH="\$(__git_ps1 '[branch %s ] ')"
     fi
+
+    if [ "\$(type -t __virtualenv_ps1)" ]; then
+        INVENV="\$(__virtualenv_ps1)"
+    fi
+
     local TIME=`fmt_time` # format time for prompt string
     local LOAD=`uptime|awk -F' ' '{min=NF-2;avg=NF-1;max=NF;print $min" "$avg" "$max}'`
     #local LOAD_MSG=`chkload`
@@ -26,7 +31,7 @@ prompt_command () {
     local TITLEBAR='\[\e]2;`pwdtail`\a'
     export PS1="${CYAN}[${BCYAN}\u${GREEN}@${BCYAN}\
 \h${DKGRAY}(${LOAD}) ${WHITE}${TIME} ${CYAN}]${RED}$ERRPROMPT${GRAY}\
-\w\n${GREEN}${BRANCH}${DEFAULT}$ "
+\w\n${RED}${INVENV}${DEFAULT}${GREEN}${BRANCH}${DEFAULT}$ "
 }
 PROMPT_COMMAND=prompt_command
 

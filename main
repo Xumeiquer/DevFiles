@@ -17,9 +17,19 @@ if [ -f ~/.dotfiles.d/git-prompt ]; then
     . ~/.dotfiles.d/git-prompt
 fi
 
+# virtualenv bash promt
+if [ -f ~/.dotfiles.d/virtualenv-prompt ]; then
+    . ~/.dotfiles.d/virtualenv-prompt
+fi
+
 # PS1 prompt
 if [ -f ~/.dotfiles.d/ps1 ]; then
     . ~/.dotfiles.d/ps1
+fi
+
+# Profile
+if [ -f ~/.dotfiles.d/profile ]; then
+    . ~/.dotfiles.d/profile
 fi
 
 # PATH
