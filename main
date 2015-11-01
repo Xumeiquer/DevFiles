@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Complete with you system configuration .bashrc
+
+# Aliases
+if [ -f ~/.dotfiles.d/aliases ]; then
+    . ~/.dotfiles.d/aliases
+fi
+
+# Git completion
+if [ -f ~/.dotfiles.d/git-completion ]; then
+    . ~/.dotfiles.d/git-completion
+fi
+
+# Git bash promt
+if [ -f ~/.dotfiles.d/git-prompt ]; then
+    . ~/.dotfiles.d/git-prompt
+fi
+
+# PS1 prompt
+if [ -f ~/.dotfiles.d/ps1 ]; then
+    . ~/.dotfiles.d/ps1
+fi
+
+# PATH
+if [ -f ~/.dotfiles.d/paths ]; then
+	. ~/.dotfiles.d/paths
+fi
